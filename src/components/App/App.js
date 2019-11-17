@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "../nav/Navbar";
+import Home from "../Home/Home";
 import { Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./App.css";
@@ -11,7 +12,7 @@ class App extends Component {
 			data: [],
 			newData: []
 		};
-		// this.setData = this.setPrice.bind(this);
+		this.setData = this.setData.bind(this);
 	}
 	componentDidMount() {
 		fetch(url)
@@ -26,12 +27,15 @@ class App extends Component {
 				console.error(err);
 			});
 	}
+	setData(newData) {
+		this.setState({ newData: newData });
+	}
 	render() {
 		for (let i = 0; i < this.state.data.length; i++) {
 			this.state.newData.push(this.state.data[i].drinkCategory);
 		}
 		let filteredData = [...new Set(this.state.newData)];
-		console.log(filteredData);
+		// console.log(filteredData);
 		return (
 			<div className='main-container'>
 				<nav>
@@ -39,14 +43,11 @@ class App extends Component {
 				</nav>
 
 				<main>
+					<Route exact path='/' component={Home} />
 					<Route
 						path={filteredData}
 						render={routerProps => (
-							<Link
-								data={this.state.data.drinkCategory}
-								{...routerProps}
-								{...this.state}
-							/>
+							<Link setData={this.newData} {...routerProps} {...this.state} />
 						)}
 					/>
 				</main>
