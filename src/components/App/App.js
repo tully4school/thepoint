@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "../nav/Navbar";
 import Home from "../Home/Home";
 import Drinks from "../Drinks/Drinks";
+import AddDrink from "../AddDrink/AddDrink";
 import Categories from "../Categories/Categories";
 import Category from "../Categories/Category";
 import Drink from "../Categories/Drink";
@@ -25,6 +26,7 @@ class App extends Component {
 					<Route path='/' exact component={Home} />
 					<Route path='/drinks' component={Drinks} />
 					<Route path='/categories' exact component={Categories} />
+					<Route path='/add' component={AddDrink} />
 					<Route path='/about' component={About} />
 					<Route path='/categories/:drinkCategory' exact component={Category} />
 				</main>
