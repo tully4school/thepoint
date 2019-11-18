@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { thisExpression } from "@babel/types";
-class Ingredients extends Component {
+class Measures extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
@@ -19,4 +19,4 @@ class Ingredients extends Component {
 		);
 	}
 }
-export default Ingredients;
+export default Measures;

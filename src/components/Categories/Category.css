@@ -1,4 +1,17 @@
 .category-drinks img {
 	width: 20%;
 	height: auto;
+	border-radius: 12px 12px 0 0;
+}
+.categoryData {
+	background-color: black;
+	color: white;
+	width: 16.1%;
+	padding: 30px;
+	margin-top: -5px;
+	border-radius: 0 0 12px 12px;
+}
+.categoryData li {
+	line-height: 2;
+	font-weight: bolder;
 }

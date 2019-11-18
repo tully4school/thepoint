@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "../../../node_modules/axios";
+import "./AddDrink.css";
 const url = "http://localhost:8080/drinks";
 class AddDrink extends Component {
 	constructor(props) {
@@ -38,7 +39,7 @@ class AddDrink extends Component {
 			drinkThumb
 		} = this.state;
 		return (
-			<form onSubmit={this.handleSubmit}>
+			<form className='addDrink' onSubmit={this.handleSubmit}>
 				<input
 					type='text'
 					name='drinkName'
@@ -51,7 +52,7 @@ class AddDrink extends Component {
 					name='alcohol'
 					value={alcohol}
 					onChange={this.handleChange}
-					placeholder='Does it have alcohol?'
+					placeholder='Does it have alcohol? True or False'
 				></input>
 				<input
 					type='text'

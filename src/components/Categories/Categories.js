@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-// import Category from "./Category";
+import "./Category.css";
 import { Link } from "react-router-dom";
+import { thisExpression } from "@babel/types";
+
 const url = "http://localhost:8080/drinks";
 
 class Categories extends Component {
@@ -24,6 +26,7 @@ class Categories extends Component {
 	}
 	render() {
 		// console.log(this.state.data);
+
 		this.state.data.map(item =>
 			this.state.categoryData.push(item.drinkCategory)
 		);
@@ -31,11 +34,13 @@ class Categories extends Component {
 		return (
 			<div>
 				{filteredData.map(item => (
-					<h1 key={item}>
-						<Link to={`/categories/${item}`} data={this.filteredData}>
-							{item}
-						</Link>
-					</h1>
+					<div className='category'>
+						<h4 key={item}>
+							<Link to={`/categories/${item}`} data={this.filteredData}>
+								{item}
+							</Link>
+						</h4>
+					</div>
 				))}
 			</div>
 		);

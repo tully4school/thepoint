@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Ingredients from "../Ingredients/Ingredients";
+import Measures from "../Ingredients/Measures";
 import "./Category.css";
 
 const url = "http://localhost:8080/drinks/category/";
@@ -27,12 +28,21 @@ class Category extends Component {
 				<h1>{this.props.match.params.drinkCategory}</h1>
 				{this.state.data.map((item, i) => (
 					<div className='category-drinks' key={item._id}>
+						<h2>{item.drinkName}</h2>
 						<img src={item.drinkThumb} />
-						<h4>{item.drinkName}</h4>
-						<ul>
-							<li>Alcohol:{item.alcohol}</li>
-							<li>Served in:{item.drinkGlass}</li>
-							<Ingredients data={item.drinkIngredients} />
+
+						<ul className='categoryData'>
+							<li>Alcohol:{" " + item.alcohol}</li>
+							<li>Served in:{" " + item.drinkGlass}</li>
+							<li>
+								Ingredients:
+								<span>
+									<Ingredients data={item.drinkIngredients} />
+								</span>
+							</li>
+							<li>
+								Measures: <Measures data={item.drinkMeasures} />
+							</li>
 						</ul>
 					</div>
 				))}

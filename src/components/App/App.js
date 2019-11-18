@@ -5,6 +5,7 @@ import Drinks from "../Drinks/Drinks";
 import AddDrink from "../AddDrink/AddDrink";
 import Categories from "../Categories/Categories";
 import Category from "../Categories/Category";
+import Contact from "../Contact/Contact";
 import Drink from "../Categories/Drink";
 import About from "../About/About";
 import { Route } from "react-router-dom";
@@ -29,6 +30,7 @@ class App extends Component {
 					<Route path='/add' component={AddDrink} />
 					<Route path='/about' component={About} />
 					<Route path='/categories/:drinkCategory' exact component={Category} />
+					<Route path='/contact' component={Contact} />
 				</main>
 			</div>
 		);
