@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./Navbar.css";
-import NavLink from "./Link.js";
+import { Link } from "react-router-dom";
+// import NavLink from "./Link.js";
 const url = "http://localhost:8080/drinks";
-// import { Link } from "react-router-dom";
+
 class Navbar extends Component {
 	constructor(props) {
 		super(props);
@@ -25,27 +26,27 @@ class Navbar extends Component {
 			});
 	}
 	render() {
-		for (let i = 0; i < this.state.data.length; i++) {
-			this.state.newData.push(this.state.data[i].drinkCategory);
-		}
-		let filteredData = [...new Set(this.state.newData)];
-		// console.log(this.props.data);
-		// let navItem = this.props.data.map(item => {
-		// 	return (
-		// 		// <ul className='list' key={item}>
-		// 		<li>
-		// 			<Link to={item.replace(" / ", "")}>{item}</Link>
-		// 		</li>
-		// 		// </ul>
-		// 	);
-		// });
 		return (
-			<div>
-				<ul>
-					<NavLink data={filteredData} />
-				</ul>
-			</div>
+			<ul>
+				<li>
+					<Link to='/'>Home</Link>
+					<Link to='/drinks'>Cocktails</Link>
+					<Link to='/categories'>Categories</Link>
+					<Link to='/about'>About</Link>
+				</li>
+			</ul>
 		);
 	}
 }
 export default Navbar;
+//for (let i = 0; i < this.state.data.length; i++) {
+// 	this.state.newData.push(this.state.data[i].drinkCategory);
+// }
+// let filteredData = [...new Set(this.state.newData)];
+// return (
+// 	<div>
+// 		<ul>
+// 			<NavLink data={filteredData} />
+// 		</ul>
+// 	</div>
+// );
