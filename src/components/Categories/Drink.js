@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
-const url = "http://localhost:8080/drinks/";
+const url = "http://cocktail-recipes-tully4school.herokuapp.com/drinks";
 class Drink extends Component {
 	constructor(props) {
 		super(props);

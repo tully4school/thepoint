@@ -3,7 +3,8 @@ import Ingredients from "../Ingredients/Ingredients";
 import Measures from "../Ingredients/Measures";
 import "./Category.css";
 
-const url = "http://localhost:8080/drinks/category/";
+const url =
+	"http://cocktail-recipes-tully4school.herokuapp.com/drinks/category/";
 class Category extends Component {
 	constructor(props) {
 		super(props);

@@ -3,7 +3,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import Searchbar from "../Search/SearchBar";
 // import NavLink from "./Link.js";
-const url = "http://localhost:8080/drinks";
+const url = "http://cocktail-recipes-tully4school.herokuapp.com";
 
 class Navbar extends Component {
 	constructor(props) {
@@ -45,14 +45,3 @@ class Navbar extends Component {
 	}
 }
 export default Navbar;
-//for (let i = 0; i < this.state.data.length; i++) {
-// 	this.state.newData.push(this.state.data[i].drinkCategory);
-// }
-// let filteredData = [...new Set(this.state.newData)];
-// return (
-// 	<div>
-// 		<ul>
-// 			<NavLink data={filteredData} />
-// 		</ul>
-// 	</div>
-// );

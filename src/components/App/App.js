@@ -11,7 +11,7 @@ import About from "../About/About";
 import { Route } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import "./App.css";
-// const url = "http://localhost:8080/drinks";
+// const url = "http://cocktail-recipes-tully4school.herokuapp.com/drinks";
 class App extends Component {
 	constructor(props) {
 		super(props);
