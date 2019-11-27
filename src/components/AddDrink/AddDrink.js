@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import axios from "../../../node_modules/axios";
 import "./AddDrink.css";
-const url = "http://localhost:8080/drinks";
+const url = "http://cocktail-recipes-tully4school.herokuapp.com/drinks/";
 class AddDrink extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			drinkName: "",
 			alcohol: "",
+			drinkCategory: "",
 			drinkGlass: "",
 			drinkIngredients: "",
 			drinkMeasures: "",
@@ -33,6 +34,7 @@ class AddDrink extends Component {
 		const {
 			drinkName,
 			alcohol,
+			drinkCategory,
 			drinkGlass,
 			drinkIngredients,
 			drinkMeasures,
@@ -53,6 +55,13 @@ class AddDrink extends Component {
 					value={alcohol}
 					onChange={this.handleChange}
 					placeholder='Does it have alcohol? True or False'
+				></input>
+				<input
+					type='text'
+					name='drinkCategory'
+					value={drinkCategory}
+					onChange={this.handleChange}
+					placeholder='Drink Category'
 				></input>
 				<input
 					type='text'
