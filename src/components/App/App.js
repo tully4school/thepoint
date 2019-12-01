@@ -3,6 +3,7 @@ import Navbar from "../nav/Navbar";
 import Home from "../Home/Home";
 import Drinks from "../Drinks/Drinks";
 import AddDrink from "../AddDrink/AddDrink";
+import DeleteDrink from "../DeleteDrink/DeleteDrink";
 import Categories from "../Categories/Categories";
 import Category from "../Categories/Category";
 import Contact from "../Contact/Contact";
@@ -28,6 +29,7 @@ class App extends Component {
 					<Route path='/drinks' component={Drinks} />
 					<Route path='/categories' exact component={Categories} />
 					<Route path='/add' component={AddDrink} />
+					<Route path='/delete' component={DeleteDrink} />
 					<Route path='/about' component={About} />
 					<Route path='/categories/:drinkCategory' exact component={Category} />
 					<Route path='/contact' component={Contact} />

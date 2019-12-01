@@ -36,6 +36,7 @@ class Navbar extends Component {
 					<Link to='/categories/Shots'>Shots</Link>
 					<Link to='/categories'>Categories</Link>
 					<Link to='/add'>Add A Drink</Link>
+					<Link to='/delete'>Remove A Drink</Link>
 					<Link to='/about'>About</Link>
 					<Link to='/Contact'>Contact</Link>
 					<Searchbar />

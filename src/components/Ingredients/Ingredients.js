@@ -7,7 +7,19 @@ class Ingredients extends Component {
 	}
 	render() {
 		console.log(this.props);
-
+		let ingredients = this.props.data.map(i => {
+			return i.drinkIngredients;
+		});
+		console.log(ingredients);
+		let measures = this.props.data.map(i => {
+			return i.drinkMeasures;
+		});
+		console.log(measures);
+		let total = measures.reduce((total, field, index) => {
+			total[ingredients[index]] = field;
+			return total;
+		}, {});
+		console.log(total);
 		return (
 			<div>
 				<ul>
