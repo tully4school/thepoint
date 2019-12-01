@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "../../../node_modules/axios";
-import "./AddDrink.css";
-const url = "http://cocktail-recipes-tully4school.herokuapp.com/drinks/";
+import "../AddDrink/AddDrink.css";
 class DeleteDrink extends Component {
 	constructor(props) {
 		super(props);
@@ -16,7 +15,10 @@ class DeleteDrink extends Component {
 		e.preventDefault();
 		console.log(this.state);
 		axios
-			.delete(url, this.state)
+			.delete(
+				`https://cocktail-recipes-tully4school.herokuapp.com/drinks/${this.state._id}`,
+				this.state
+			)
 			.then(res => {
 				console.log(res);
 			})
@@ -31,7 +33,7 @@ class DeleteDrink extends Component {
 				<input
 					type='text'
 					name='_id'
-					placeholder='Drink ID'
+					placeholder='ID of the drink to be deleted'
 					value={_id}
 					onChange={this.handleChange}
 				></input>
