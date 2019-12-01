@@ -11,6 +11,11 @@ class Results extends Component {
 			resultData: this.props.location.state.results
 		};
 	}
+	componentWillReceiveProps(nextProps) {
+		this.setState({
+			resultData: nextProps.location.state.results
+		});
+	}
 	render() {
 		return (
 			<div>

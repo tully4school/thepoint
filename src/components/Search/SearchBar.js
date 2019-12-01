@@ -25,14 +25,27 @@ class Searchbar extends Component {
 		});
 		this.setState({ submitted: true });
 	};
+	componentDidUpdate() {
+		if (this.state.submitted) {
+			this.setState({
+				submitted: false,
+				results: []
+			});
+		}
+	}
 	render() {
 		if (this.state.submitted) {
 			return (
 				<Redirect
-					to={{ pathname: "/results", state: { results: this.state.results } }}
+					to={{
+						pathname: "/results",
+						state: { results: this.state.results }
+					}}
+					data={this.state.results}
 				/>
 			);
 		}
+
 		const { drinkName } = this.state;
 		return (
 			<div className='searchbar' onSubmit={this.handleSubmit}>
