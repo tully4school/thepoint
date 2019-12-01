@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { thisExpression } from "@babel/types";
+
 class Measures extends Component {
 	constructor(props) {
 		super(props);
@@ -12,7 +12,7 @@ class Measures extends Component {
 			<div>
 				<ul>
 					{this.props.data.map(item => (
-						<li>{item + " "}</li>
+						<li key={item.toString()}>{item + " "}</li>
 					))}
 				</ul>
 			</div>

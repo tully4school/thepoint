@@ -46,7 +46,7 @@ class Category extends Component {
 				{this.state.data.map((item, i) => (
 					<div className='category-drinks' key={item._id}>
 						<h2>{item.drinkName}</h2>
-						<img src={item.drinkThumb} />
+						<img src={item.drinkThumb} alt={item.drinkName} />
 
 						<ul className='categoryData'>
 							<li>Alcohol:{" " + item.alcohol}</li>

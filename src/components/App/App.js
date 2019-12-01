@@ -10,7 +10,6 @@ import DeleteDrink from "../DeleteDrink/DeleteDrink";
 import Categories from "../Categories/Categories";
 import Category from "../Categories/Category";
 import Contact from "../Contact/Contact";
-import Drink from "../Categories/Drink";
 import About from "../About/About";
 import { Route } from "react-router-dom";
 // import { Link } from "react-router-dom";

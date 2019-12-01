@@ -19,6 +19,8 @@ class Searchbar extends Component {
 		this.props.data.map(item => {
 			if (item.drinkName.toLowerCase().includes(this.state.searchBar)) {
 				return this.state.results.push(item);
+			} else {
+				return null;
 			}
 		});
 		this.setState({ submitted: true });
@@ -40,7 +42,7 @@ class Searchbar extends Component {
 						type='text'
 						value={drinkName}
 						name='searchBar'
-						class='searchbar'
+						className='searchbar'
 						onChange={this.handleChange}
 					></input>
 					<button type='submit'>Sniff Sniff</button>

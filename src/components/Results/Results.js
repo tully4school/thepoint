@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import Ingredients from "../Ingredients/Ingredients";
 import Measures from "../Ingredients/Measures";
 import "./Results.css";
@@ -19,7 +18,7 @@ class Results extends Component {
 				{this.state.resultData.map(drink => (
 					<div className='category-drinks' key={drink._id}>
 						<h2>{drink.drinkName}</h2>
-						<img src={drink.drinkThumb} />
+						<img src={drink.drinkThumb} alt={drink.drinkName} />
 
 						<ul className='categoryData'>
 							<li>Alcohol:{" " + drink.alcohol}</li>

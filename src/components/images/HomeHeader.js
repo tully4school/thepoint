@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Images.css";
-import BoozeHound from "../images/boozehound.jpg";
+
 class HomeHeader extends Component {
 	render() {
 		return (
