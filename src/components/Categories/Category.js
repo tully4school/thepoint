@@ -3,7 +3,8 @@ import Ingredients from "../Ingredients/Ingredients";
 import Measures from "../Ingredients/Measures";
 import "./Category.css";
 
-const url = "http://localhost:8080/drinks/category/";
+const url =
+	"https://cocktail-recipes-tully4school.herokuapp.com/drinks/category/";
 class Category extends Component {
 	constructor(props) {
 		super(props);
@@ -13,27 +14,31 @@ class Category extends Component {
 	}
 	componentDidMount() {
 		const value = this.props.match.params.drinkCategory;
-		// console.log(this.props.match.params.drinkCategory);
+		console.log(this.props.match.params.drinkCategory);
 		fetch(`${url}${value}`)
 			.then(res => res.json())
 			.then(res => {
 				this.setState({ data: res });
-				// console.log(res);
+				console.log(res);
+			})
+			.catch(err => {
+				console.log("there was an error...", err);
 			});
 	}
 	render() {
+		console.log(this.state.data);
 		// console.log(this.state.data);
-		let ingredients = this.state.data.map(i => {
-			return i.drinkIngredients;
-		});
-		let measures = this.state.data.map(i => {
-			return i.drinkMeasures;
-		});
-		console.log(measures);
-		let total = measures.reduce((total, field, index) => {
-			total[ingredients[index]] = field;
-			return total;
-		}, {});
+		// let ingredients = this.state.data.map(i => {
+		// 	return i.drinkIngredients;
+		// });
+		// let measures = this.state.data.map(i => {
+		// 	return i.drinkMeasures;
+		// });
+		// console.log(measures);
+		// let total = measures.reduce((total, field, index) => {
+		// 	total[ingredients[index]] = field;
+		// 	return total;
+		// }, {});
 		// console.log(total);
 		return (
 			<div>

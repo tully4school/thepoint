@@ -3,7 +3,7 @@ import "./Category.css";
 import { Link } from "react-router-dom";
 import { thisExpression } from "@babel/types";
 
-const url = "http://localhost:8080/drinks";
+const url = "https://cocktail-recipes-tully4school.herokuapp.com/drinks";
 
 class Categories extends Component {
 	constructor(props) {

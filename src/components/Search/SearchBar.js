@@ -1,36 +1,39 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import "./Searchbar.css";
-import axios from "../../../node_modules/axios";
-let url = "http://localhost:8080/drinks";
 
 class Searchbar extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			searchBar: "",
 			results: [],
-			searchBar: ""
+			submitted: false
 		};
 	}
 	handleChange = e => {
-		this.setState({ [e.target.name]: e.target.value });
+		this.setState({ searchBar: e.target.value.toLowerCase() });
 	};
 	handleSubmit = e => {
 		e.preventDefault();
-		console.log(this.state);
-		axios
-			.post(url, this.state)
-			.then(res => {
-				console.log(res);
-			})
-			.then(err => {
-				console.log(err);
-			});
+		this.props.data.map(item => {
+			if (item.drinkName.toLowerCase().includes(this.state.searchBar)) {
+				return this.state.results.push(item);
+			}
+		});
+		this.setState({ submitted: true });
 	};
-
 	render() {
+		if (this.state.submitted) {
+			return (
+				<Redirect
+					to={{ pathname: "/results", state: { results: this.state.results } }}
+				/>
+			);
+		}
 		const { drinkName } = this.state;
 		return (
-			<div className='searchbar'>
+			<div className='searchbar' onSubmit={this.handleSubmit}>
 				<form>
 					<input
 						placeholder='Sniff Out Your Drink!'

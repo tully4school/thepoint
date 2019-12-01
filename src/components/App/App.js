@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "../nav/Navbar";
+import SearchBar from "../Search/SearchBar";
+import Results from "../Results/Results";
 import Home from "../Home/Home";
 import Drinks from "../Drinks/Drinks";
 import AddDrink from "../AddDrink/AddDrink";
@@ -13,21 +15,39 @@ import About from "../About/About";
 import { Route } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import "./App.css";
-// const url = "http://cocktail-recipes-tully4school.herokuapp.com/drinks";
+const url = "https://cocktail-recipes-tully4school.herokuapp.com/drinks";
 class App extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			data: []
+		};
+	}
+	componentDidMount() {
+		fetch(url)
+			.then(res => res.json())
+			.then(res => {
+				this.setState({ data: res });
+			})
+			.catch(err => {
+				console.log("there has been an error...", err);
+			});
 	}
 	render() {
+		console.log(this.state.data);
 		return (
 			<div className='main-container'>
 				<nav>
-					<Navbar />
+					<Navbar data={this.state.data} />
 				</nav>
 				<main>
 					<Route path='/' exact component={Home} />
 					<Route path='/drinks' component={Drinks} />
+					<Route
+						path='/search'
+						render={() => <SearchBar data={this.state.data} />}
+					/>
+					<Route path='/results' component={Results} />
 					<Route path='/categories' exact component={Categories} />
 					<Route path='/add' component={AddDrink} />
 					<Route path='/update' component={UpdateDrink} />

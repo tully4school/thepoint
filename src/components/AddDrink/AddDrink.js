@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "../../../node_modules/axios";
 import "./AddDrink.css";
-const url = "http://cocktail-recipes-tully4school.herokuapp.com/drinks/";
+const url = "https://cocktail-recipes-tully4school.herokuapp.com/drinks/";
 class AddDrink extends Component {
 	constructor(props) {
 		super(props);

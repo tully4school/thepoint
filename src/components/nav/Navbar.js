@@ -3,7 +3,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import Searchbar from "../Search/SearchBar";
 // import NavLink from "./Link.js";
-const url = "http://cocktail-recipes-tully4school.herokuapp.com";
+const url = "http://cocktail-recipes-tully4school.herokuapp.com/drinks/";
 
 class Navbar extends Component {
 	constructor(props) {
@@ -40,7 +40,7 @@ class Navbar extends Component {
 					<Link to='/delete'>Remove A Drink</Link>
 					<Link to='/about'>About</Link>
 					<Link to='/Contact'>Contact</Link>
-					<Searchbar />
+					<Searchbar data={this.props.data} />
 				</li>
 			</ul>
 		);
