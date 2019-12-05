@@ -3,7 +3,7 @@
 	"author": "Joseph Tully",
 	"license": "ISC",
 	"version": "0.1.0",
-	"homepage": "https://github.com/tully4school/thepoint#readme",
+	// "homepage": "https://github.com/tully4school/thepoint#readme",
 	"description": "Front-end for drinkmixer API",
 	"main": "index.js",
 	"private": true,
