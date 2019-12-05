@@ -1,11 +1,7 @@
 # BoozeHound
 An app to easily find, update and add your favorite cocktail recipes.
 
-![Homepage](https://raw.githubusercontent.com/tully4school/thepoint/master/images/Screen%20Shot%202019-12-05%20at%203.39.04%20AM.png)
-![Searchbar](https://raw.githubusercontent.com/tully4school/thepoint/master/images/Screen%20Shot%202019-12-05%20at%203.41.38%20AM.png)
-![Search Results](https://raw.githubusercontent.com/tully4school/thepoint/master/images/Screen%20Shot%202019-12-05%20at%203.42.06%20AM.png)
-![Nav img](https://raw.githubusercontent.com/tully4school/thepoint/master/images/Screen%20Shot%202019-12-05%20at%203.42.49%20AM.png)
-![Update Drink](https://raw.githubusercontent.com/tully4school/thepoint/master/images/Screen%20Shot%202019-12-05%20at%203.43.04%20AM.png)
+[Imgur](https://i.imgur.com/Wsfpzv2.gifv)
 
 ## Front-end Built With
  - Javascript/ReactJS
