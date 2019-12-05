@@ -1,7 +1,7 @@
 # BoozeHound
 An app to easily find, update and add your favorite cocktail recipes.
 
-![](https://i.imgur.com/Wsfpzv2.gifv)
+![](https://i.imgur.com/Wsfpzv2.gif)
 
 ## Front-end Built With
  - Javascript/ReactJS
