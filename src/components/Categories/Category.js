@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Ingredients from "../Ingredients/Ingredients";
 import Measures from "../Ingredients/Measures";
 import "./Category.css";
+import Modal from "../Modal/Modal";
+import Backdrop from "../Modal/Backdrop";
 
 const url =
 	"https://cocktail-recipes-tully4school.herokuapp.com/drinks/category/";
@@ -9,7 +11,8 @@ class Category extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			data: []
+			data: [],
+			openModal: null
 		};
 	}
 	componentDidMount() {
@@ -25,6 +28,12 @@ class Category extends Component {
 				console.log("there was an error...", err);
 			});
 	}
+	openModalHandler = drinkName => {
+		this.setState({ openModal: drinkName });
+	};
+	closeModalHandler = () => {
+		this.setState({ openModal: null });
+	};
 	render() {
 		console.log(this.state.data);
 		// console.log(this.state.data);
@@ -41,14 +50,37 @@ class Category extends Component {
 		// }, {});
 		// console.log(total);
 		return (
-			<div>
-				<h1>{this.props.match.params.drinkCategory}</h1>
-				{this.state.data.map((item, i) => (
-					<div className='category-drinks' key={item._id}>
-						<h2>{item.drinkName}</h2>
-						<img src={item.drinkThumb} alt={item.drinkName} />
-
-						<ul className='categoryData'>
+			<React.Fragment>
+				{this.state.openModal && <Backdrop />}
+				<div>
+					<h1>{this.props.match.params.drinkCategory}</h1>
+					{this.state.data.map((item, i) => (
+						<div className='category-drinks' key={item._id}>
+							<h2 className='modal-header'>{item.drinkName}</h2>
+							<img
+								src={item.drinkThumb}
+								alt={item.drinkName}
+								onClick={this.openModalHandler}
+							/>
+						</div>
+					))}
+					{this.state.openModal && (
+						<Modal
+							title='Cocktail'
+							openModal={this.state.openModalHandler}
+							close={this.closeModalHandler}
+						>
+							<h2 className='modal-header'>{this.state.data.drinkName}</h2>
+						</Modal>
+					)}
+				</div>
+			</React.Fragment>
+		);
+	}
+}
+export default Category;
+{
+	/* <ul className='categoryData'>
 							<li>Alcohol:{" " + item.alcohol}</li>
 							<li>Served in:{" " + item.drinkGlass}</li>
 							<li>
@@ -60,11 +92,5 @@ class Category extends Component {
 							<li>
 								Measures: <Measures data={item.drinkMeasures} />
 							</li>
-						</ul>
-					</div>
-				))}
-			</div>
-		);
-	}
+						</ul> */
 }
-export default Category;

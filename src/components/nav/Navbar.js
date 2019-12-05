@@ -31,9 +31,6 @@ class Navbar extends Component {
 			<ul>
 				<li>
 					<Link to='/'>Home</Link>
-					<Link to='/categories/Cocktails'>Cocktails</Link>
-					<Link to='/categories/Beer'>Beer</Link>
-					<Link to='/categories/Shots'>Shots</Link>
 					<Link to='/categories'>Categories</Link>
 					<Link to='/add'>Add A Drink</Link>
 					<Link to='/update'>Update A Drink</Link>

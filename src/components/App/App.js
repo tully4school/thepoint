@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "../nav/Navbar";
 import SearchBar from "../Search/SearchBar";
 import Results from "../Results/Results";
+import Modal from "../Modal/Modal";
 import Home from "../Home/Home";
 import Drinks from "../Drinks/Drinks";
 import AddDrink from "../AddDrink/AddDrink";
@@ -19,14 +20,15 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			data: []
+			data: [],
+			loading: true
 		};
 	}
 	componentDidMount() {
 		fetch(url)
 			.then(res => res.json())
 			.then(res => {
-				this.setState({ data: res });
+				this.setState({ data: res, loading: false });
 			})
 			.catch(err => {
 				console.log("there has been an error...", err);
@@ -40,14 +42,29 @@ class App extends Component {
 					<Navbar data={this.state.data} />
 				</nav>
 				<main>
-					<Route path='/' exact component={Home} />
-					<Route path='/drinks' component={Drinks} />
+					<Route
+						path='/'
+						exact
+						render={() => <Home data={this.state.data} />}
+					/>
+					<Route
+						path='/drinks'
+						render={() => <Drinks data={this.state.data} />}
+					/>
 					<Route
 						path='/search'
 						render={() => <SearchBar data={this.state.data} />}
 					/>
 					<Route path='/results' component={Results} />
-					<Route path='/categories' exact component={Categories} />
+					<Route
+						path='/categories'
+						exact
+						render={() => <Categories data={this.state.data} />}
+					/>
+					<Route
+						path='/modal'
+						render={() => <Modal data={this.state.data} />}
+					/>
 					<Route path='/add' component={AddDrink} />
 					<Route path='/update' component={UpdateDrink} />
 					<Route path='/delete' component={DeleteDrink} />
