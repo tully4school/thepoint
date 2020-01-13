@@ -1,4 +1,6 @@
 .searchbar {
-	position: absolute;
-	right: 90px;
+	width: 20vw;
+}
+.searchbar form {
+	width: 28vw;
 }

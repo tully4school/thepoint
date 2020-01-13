@@ -13,6 +13,7 @@
 		"react-bootstrap": "^1.0.0-beta.16",
 		"react-dom": "^16.12.0",
 		"react-dropdown-input": "^0.1.11",
+		"react-fontawesome": "^1.7.1",
 		"react-router-dom": "^5.1.2",
 		"react-scripts": "3.2.0"
 	},
