@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import "./Searchbar.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import faStyles from "font-awesome/css/font-awesome.css";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faHamburger, faPizzaSlice } from "@fortawesome/free-solid-svg-icons";
-library.add(faHamburger, faPizzaSlice);
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import faStyles from "font-awesome/css/font-awesome.css";
+// import { library } from "@fortawesome/fontawesome-svg-core";
+// import { faHamburger, faPizzaSlice } from "@fortawesome/free-solid-svg-icons";
+// library.add(faHamburger, faPizzaSlice);
 
 class Searchbar extends Component {
 	constructor(props) {
@@ -65,7 +65,8 @@ class Searchbar extends Component {
 						onChange={this.handleChange}
 					></input>
 					<button type='submit'>
-						<FontAwesomeIcon icon={["fa", "pizza-slice"]} />
+						{/* <FontAwesomeIcon icon={["fa", "pizza-slice"]} /> */}
+						test
 					</button>
 				</form>
 			</div>
