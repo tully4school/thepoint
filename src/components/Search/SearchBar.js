@@ -58,7 +58,7 @@ class Searchbar extends Component {
 						className='searchbar'
 						onChange={this.handleChange}
 					></input>
-					<button type='submit'>Sniff Sniff</button>
+					<button type='submit'>Search</button>
 				</form>
 			</div>
 		);

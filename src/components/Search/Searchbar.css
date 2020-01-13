@@ -1,7 +1,14 @@
 .searchbar form {
 	width: 28vw;
+	font-size: 1.05vw;
 }
 .searchbar form,
 .searchbar button {
-	height: 5vh;
+	height: 2vw !important;
+}
+.searchbar form {
+	border-right: none;
+}
+.searchbar button {
+	border: none;
 }

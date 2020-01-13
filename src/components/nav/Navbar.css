@@ -4,3 +4,11 @@ nav {
 nav .bg-light {
 	background-color: #595959 !important;
 }
+.navbar-light .navbar-brand,
+.nav-link {
+	color: white !important;
+}
+.dropdown-menu {
+	box-shadow: 0px 3px 7px -4px gray;
+	z-index: -1 !important;
+}

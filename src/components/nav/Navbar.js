@@ -1,16 +1,8 @@
 import React, { Component } from "react";
 import "./Navbar.css";
-import {
-	Navbar,
-	Nav,
-	NavDropdown,
-	Form,
-	FormControl,
-	Button
-} from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import Searchbar from "../Search/SearchBar";
-// import NavLink from "./Link.js";
+import { LinkContainer } from "react-router-bootstrap";
 const url = "http://cocktail-recipes-tully4school.herokuapp.com/drinks/";
 
 class MainNavbar extends Component {
@@ -18,7 +10,8 @@ class MainNavbar extends Component {
 		super(props);
 		this.state = {
 			data: [],
-			newData: []
+			newData: [],
+			filteredData: []
 		};
 	}
 	componentDidMount() {
@@ -26,36 +19,47 @@ class MainNavbar extends Component {
 			.then(response => response.json())
 			.then(response => {
 				this.setState({ data: response });
-				// console.log(data);
-				// this.setState({ cocktails: data });
-				// this.setState({ address: data.addresses[0] });
 			})
 			.catch(err => {
 				console.error(err);
 			});
 	}
 	render() {
+		this.props.data.map(item => this.state.newData.push(item.drinkCategory));
+		let filteredData = [...new Set(this.state.newData)];
 		return (
 			<Navbar bg='light' expand='lg'>
-				<Navbar.Brand href='#home'>React-Bootstrap</Navbar.Brand>
+				<LinkContainer to='/'>
+					<Navbar.Brand>Cocktail Creator</Navbar.Brand>
+				</LinkContainer>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
 					<Nav className='mr-auto'>
-						<Nav.Link href='#home'>Home</Nav.Link>
-						<Nav.Link tag={Link} to='/categories'>
-							Categories
-						</Nav.Link>
-						<NavDropdown title='Dropdown' id='basic-nav-dropdown'>
-							<NavDropdown.Item href='#action/3.1'>Action</NavDropdown.Item>
-							<NavDropdown.Item href='#action/3.2'>
-								Another action
-							</NavDropdown.Item>
-							<NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
-							<NavDropdown.Divider />
-							<NavDropdown.Item href='#action/3.4'>
-								Separated link
-							</NavDropdown.Item>
+						<NavDropdown title='Categories' id='basic-nav-dropdown'>
+							{filteredData.map(item => (
+								<LinkContainer
+									to={`/categories/${item}`}
+									data={this.filteredData}
+								>
+									<NavDropdown.Item>{item}</NavDropdown.Item>
+								</LinkContainer>
+							))}
 						</NavDropdown>
+						<LinkContainer to='/add'>
+							<Nav.Link>Add A Drink</Nav.Link>
+						</LinkContainer>
+						<LinkContainer to='/update'>
+							<Nav.Link>Update A Drink</Nav.Link>
+						</LinkContainer>
+						<LinkContainer to='/delete'>
+							<Nav.Link>Remove A Drink</Nav.Link>
+						</LinkContainer>
+						<LinkContainer to='/about'>
+							<Nav.Link>About Cocktail Creator</Nav.Link>
+						</LinkContainer>
+						<LinkContainer to='/contact'>
+							<Nav.Link>Contact</Nav.Link>
+						</LinkContainer>
 					</Nav>
 					<Searchbar data={this.props.data} />
 				</Navbar.Collapse>
