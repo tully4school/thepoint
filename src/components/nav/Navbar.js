@@ -18,9 +18,6 @@ class Navbar extends Component {
 			.then(response => response.json())
 			.then(response => {
 				this.setState({ data: response });
-				// console.log(data);
-				// this.setState({ cocktails: data });
-				// this.setState({ address: data.addresses[0] });
 			})
 			.catch(err => {
 				console.error(err);
@@ -28,15 +25,29 @@ class Navbar extends Component {
 	}
 	render() {
 		return (
-			<ul>
+			<ul className='m-0'>
 				<li>
 					<Link to='/'>Home</Link>
+				</li>
+				<li>
 					<Link to='/categories'>Categories</Link>
+				</li>
+				<li>
 					<Link to='/add'>Add A Drink</Link>
+				</li>
+				<li>
 					<Link to='/update'>Update A Drink</Link>
+				</li>
+				<li>
 					<Link to='/delete'>Remove A Drink</Link>
+				</li>
+				<li>
 					<Link to='/about'>About</Link>
+				</li>
+				<li>
 					<Link to='/Contact'>Contact</Link>
+				</li>
+				<li>
 					<Searchbar data={this.props.data} />
 				</li>
 			</ul>

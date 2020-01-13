@@ -38,7 +38,7 @@ class App extends Component {
 		console.log(this.state.data);
 		return (
 			<div className='main-container'>
-				<nav>
+				<nav className='d-flex align-items-center py-5'>
 					<Navbar data={this.state.data} />
 				</nav>
 				<main>
