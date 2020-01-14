@@ -6,7 +6,7 @@ class Categories extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			categoryData: []
+			categoryData: this.props.data
 		};
 	}
 	render() {

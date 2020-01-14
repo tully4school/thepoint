@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import Searchbar from "../Search/SearchBar";
 import { LinkContainer } from "react-router-bootstrap";
+import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
 const url = "http://cocktail-recipes-tully4school.herokuapp.com/drinks/";
 
@@ -14,6 +15,10 @@ class MainNavbar extends Component {
 			newData: [],
 			filteredData: []
 		};
+		this.handleLink = this.handleLink.bind(this);
+	}
+	handleLink(path) {
+		this.props.history.push(path);
 	}
 	componentDidMount() {
 		fetch(url)
@@ -44,7 +49,9 @@ class MainNavbar extends Component {
 									to={`/categories/${item}`}
 									data={this.filteredData}
 								>
-									<NavDropdown.Item>{item}</NavDropdown.Item>
+									<NavDropdown.Item componentClass={Link}>
+										{item}
+									</NavDropdown.Item>
 								</LinkContainer>
 							))}
 						</NavDropdown>

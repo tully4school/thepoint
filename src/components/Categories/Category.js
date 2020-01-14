@@ -3,7 +3,6 @@ import Ingredients from "../Ingredients/Ingredients";
 import Measures from "../Ingredients/Measures";
 import "./Category.css";
 import Modal from "../Modal/Modal";
-import Backdrop from "../Modal/Backdrop";
 
 const url =
 	"https://cocktail-recipes-tully4school.herokuapp.com/drinks/category/";
@@ -17,7 +16,7 @@ class Category extends Component {
 	}
 	componentDidMount() {
 		const value = this.props.match.params.drinkCategory;
-		console.log(this.props.match.params.drinkCategory);
+		console.log(value);
 		fetch(`${url}${value}`)
 			.then(res => res.json())
 			.then(res => {
@@ -28,12 +27,6 @@ class Category extends Component {
 				console.log("there was an error...", err);
 			});
 	}
-	openModalHandler = drinkName => {
-		this.setState({ openModal: drinkName });
-	};
-	closeModalHandler = () => {
-		this.setState({ openModal: null });
-	};
 	render() {
 		console.log(this.state.data);
 		// console.log(this.state.data);
@@ -49,35 +42,56 @@ class Category extends Component {
 		// 	return total;
 		// }, {});
 		// console.log(total);
+
 		return (
-			<React.Fragment>
-				{this.state.openModal && <Backdrop />}
-				<div>
-					<h1>{this.props.match.params.drinkCategory}</h1>
-					{this.state.data.map((item, i) => (
-						<div className='category-drinks' key={item._id}>
-							<h2 className='modal-header'>{item.drinkName}</h2>
-							<img
+			<div className='container'>
+				<div className='row'>
+					<div className='col-lg-12'>
+						<h1>{this.props.match.params.drinkCategory}</h1>
+						{this.state.data.map(item => (
+							<Modal
+								img={
+									<img
+										src={item.drinkThumb}
+										className='modal-img'
+										alt={item.drinkName}
+									/>
+								}
 								src={item.drinkThumb}
-								alt={item.drinkName}
-								onClick={this.openModalHandler}
 							/>
-						</div>
-					))}
-					{this.state.openModal && (
-						<Modal
-							title='Cocktail'
-							openModal={this.state.openModalHandler}
-							close={this.closeModalHandler}
-						>
-							<h2 className='modal-header'>{this.state.data.drinkName}</h2>
-						</Modal>
-					)}
+						))}
+					</div>
 				</div>
-			</React.Fragment>
+			</div>
 		);
 	}
 }
+// <React.Fragment>
+// 	{this.state.openModal && <Backdrop />}
+// 	<div>
+// 		<h1>{this.props.match.params.drinkCategory}</h1>
+// 		{this.state.data.map((item, i) => (
+// 			<div className='category-drinks' key={item._id}>
+// 				<h2 className='modal-header'>{item.drinkName}</h2>
+// 				<img
+// 					src={item.drinkThumb}
+// 					alt={item.drinkName}
+// 					onClick={this.openModalHandler}
+// 				/>
+// 			</div>
+// 		))}
+// 		{this.state.openModal && (
+// 			<Modal
+// 				title='Cocktail'
+// 				openModal={this.state.openModalHandler}
+// 				close={this.closeModalHandler}
+// 			>
+// 				<h2 className='modal-header'>{this.state.data.drinkName}</h2>
+// 			</Modal>
+// 		)}
+// 	</div>
+// </React.Fragment>
+
 export default Category;
 {
 	/* <ul className='categoryData'>

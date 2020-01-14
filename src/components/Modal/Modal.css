@@ -1,14 +1,37 @@
-.modal {
-	width: 90%;
-	background-color: white;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-	position: fixed;
-	top: 20vh;
-	left: 5%;
+.modal-dialog {
+	max-width: 70% !important;
+	max-height: 30vh !important;
 }
-@media (min-width: 768px) {
-	.modal {
-		width: 50rem;
-		left: calc((100% - 50rem) / 2);
+.modal-content,
+.modal-content .close {
+	background-color: #000;
+	color: #fff;
+}
+.modal-header,
+.modal-footer {
+	border-bottom: none;
+	border-top: none;
+}
+.modal-footer .row {
+	width: 100%;
+}
+.fwUsed {
+	background-color: rgba(255, 255, 255, 1);
+	padding: 15px;
+}
+.modal-body img {
+	width: 100%;
+}
+.modal-img {
+	box-shadow: 1px 7px 13px 3px gray;
+	max-width: 23% !important;
+	margin: 1%;
+}
+.modal-img:active {
+	box-shadow: none;
+}
+@media only screen and (max-device-width: 576px) {
+	.modal-content {
+		width: 96vw;
 	}
 }
