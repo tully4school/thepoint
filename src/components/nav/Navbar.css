@@ -4,10 +4,21 @@ nav {
 nav .bg-light {
 	background-color: #595959 !important;
 }
+.navbar {
+	padding-left: 0px !important;
+}
+.navbar-brand {
+	width: 5rem;
+	position: relative;
+}
 .navbar-light .navbar-brand,
 .nav-link {
 	color: white !important;
 }
 .dropdown-menu {
 	box-shadow: 0px 3px 7px -4px gray;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+	padding-right: 1.5vw !important;
+	padding-left: 1.5vw !important;
 }

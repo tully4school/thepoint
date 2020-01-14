@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import Searchbar from "../Search/SearchBar";
 import { LinkContainer } from "react-router-bootstrap";
+import Logo from "../Logo/Logo";
 const url = "http://cocktail-recipes-tully4school.herokuapp.com/drinks/";
 
 class MainNavbar extends Component {
@@ -30,7 +31,9 @@ class MainNavbar extends Component {
 		return (
 			<Navbar bg='light' expand='lg'>
 				<LinkContainer to='/'>
-					<Navbar.Brand>Cocktail Creator</Navbar.Brand>
+					<Navbar.Brand className='mx-0'>
+						<Logo />
+					</Navbar.Brand>
 				</LinkContainer>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
@@ -55,7 +58,7 @@ class MainNavbar extends Component {
 							<Nav.Link>Remove A Drink</Nav.Link>
 						</LinkContainer>
 						<LinkContainer to='/about'>
-							<Nav.Link>About Cocktail Creator</Nav.Link>
+							<Nav.Link>About</Nav.Link>
 						</LinkContainer>
 						<LinkContainer to='/contact'>
 							<Nav.Link>Contact</Nav.Link>

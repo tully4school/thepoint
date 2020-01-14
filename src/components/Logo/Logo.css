@@ -1,0 +1,51 @@
+.logo-inner {
+	position: absolute;
+	width: 2rem;
+	left: 1.5rem;
+	top: 0.8rem;
+}
+.rotation {
+	animation-name: rotation;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-duration: 10s;
+	-webkit-animation-name: rotation;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 10s;
+}
+.rotation-opp {
+	animation-name: rotation-opp;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-duration: 10s;
+	-webkit-animation-name: rotation-opp;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 10s;
+}
+
+@keyframes rotation {
+	from {
+		transform: rotateY(0deg);
+		moz-transform: rotateY(0deg);
+		ms-transform: rotateY(0deg);
+	}
+	to {
+		transform: rotateY(360deg);
+		moz-transform: rotateY(360deg);
+		ms-transform: rotateY(360deg);
+	}
+}
+@keyframes rotation-opp {
+	from {
+		transform: rotateY(360deg);
+		moz-transform: rotateY(360deg);
+		ms-transform: rotateY(360deg);
+	}
+	to {
+		transform: rotateY(-360deg);
+		moz-transform: rotateY(-360deg);
+		ms-transform: rotateY(-360deg);
+	}
+}
