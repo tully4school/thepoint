@@ -41,7 +41,7 @@ class App extends Component {
 				<nav>
 					<Navbar data={this.state.data} />
 				</nav>
-				<main>
+				<main className='p-0'>
 					<Route
 						path='/'
 						exact

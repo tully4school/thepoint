@@ -10,5 +10,4 @@ nav .bg-light {
 }
 .dropdown-menu {
 	box-shadow: 0px 3px 7px -4px gray;
-	z-index: -1 !important;
 }

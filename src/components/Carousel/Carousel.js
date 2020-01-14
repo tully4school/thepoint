@@ -22,7 +22,7 @@ class HomeCarousel extends Component {
 		console.log(newDrinks);
 
 		return (
-			<Carousel>
+			<Carousel className='mb-5'>
 				{newDrinks.map(item => (
 					<Carousel.Item>
 						<div
@@ -32,7 +32,7 @@ class HomeCarousel extends Component {
 							}}
 						></div>
 						<img
-							className='carousel-img d-flex align-items-center mt-md-3 w-sm-100'
+							className='carousel-img img-fluid d-flex align-items-center mt-md-3 w-sm-100'
 							src={item.drinkThumb}
 							alt='First slide'
 						/>

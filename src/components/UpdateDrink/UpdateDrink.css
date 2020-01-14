@@ -1,0 +1,23 @@
+.crudInput {
+	width: 100% !important;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.crudInput input {
+	min-width: 270px;
+	width: 28vw;
+	font-size: 1.4vw;
+	height: 44px;
+}
+@media only screen and (max-width: 1200px) {
+	.crudInput input {
+		font-size: 15px !important;
+	}
+}
+@media only screen and (max-width: 768px) {
+	h1.crud-header {
+		font-size: 6.2vw;
+	}
+}

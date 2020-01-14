@@ -1,0 +1,16 @@
+h4.warning,
+h5.warning {
+	color: red;
+}
+
+@media only screen and (max-width: 768px) {
+	h1.crud-delete-header {
+		font-size: 3rem;
+	}
+	h4.warning {
+		font-size: 3vw !important;
+	}
+	h5.warning {
+		font-size: 2vw !important;
+	}
+}

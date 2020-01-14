@@ -1,10 +1,10 @@
-.addDrink input {
+.crudInput input {
 	display: block;
 	width: 20%;
 	height: 33px;
 	margin: 10px 0;
 }
-.addDrink button {
+.crudInput button {
 	font-size: 18px;
 	background-color: darkred;
 	color: white;

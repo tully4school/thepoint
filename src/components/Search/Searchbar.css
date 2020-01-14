@@ -12,3 +12,13 @@
 .searchbar button {
 	border: none;
 }
+@media only screen and (max-width: 767px) {
+	/* .dropdown-menu {
+		right: 108px !important;
+		top: 8% !important;
+		left: 1px !important;
+		display: block !important;
+		position: inherit !important;
+		z-index: 1000 !important;
+	} */
+}

@@ -41,7 +41,8 @@ class AddDrink extends Component {
 			drinkThumb
 		} = this.state;
 		return (
-			<form className='addDrink' onSubmit={this.handleSubmit}>
+			<div className="container">.row>.col-md-12>h1.</div>
+			<form className='crudInput' onSubmit={this.handleSubmit}>
 				<input
 					type='text'
 					name='drinkName'

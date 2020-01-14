@@ -48,10 +48,10 @@ class Searchbar extends Component {
 
 		const { drinkName } = this.state;
 		return (
-			<div className='searchbar' onSubmit={this.handleSubmit}>
+			<div className='searchbar d-none d-md-flex' onSubmit={this.handleSubmit}>
 				<form>
 					<input
-						placeholder='Sniff Out Your Drink!'
+						placeholder='Name of Drink'
 						type='text'
 						value={drinkName}
 						name='searchBar'
